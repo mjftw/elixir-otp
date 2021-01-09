@@ -1,18 +1,9 @@
 defmodule Counter do
-  @moduledoc """
-  Documentation for `Counter`.
-  """
+  def start(initial_count) do
+    spawn(fn() -> Counter.Server.run(initial_count) end)
+  end
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Counter.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def tick(pid) do
+    send(pid, {:tick, self()})
   end
 end
