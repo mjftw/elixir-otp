@@ -10,6 +10,7 @@ defmodule Counter.Server do
         Counter.Core.incr(count)
       {:state, pid} ->
         send(pid, {:count, count})
+        count
     end
   end
 end
