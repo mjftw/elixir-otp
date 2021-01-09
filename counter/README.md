@@ -1,6 +1,6 @@
 # Counter
 
-**TODO: Add description**
+Counter example described in Chapter 1 of [Designing Elixir Systems with OTP](https://pragprog.com/titles/jgotp/designing-elixir-systems-with-otp/).
 
 ## Installation
 
