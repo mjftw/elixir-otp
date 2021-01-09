@@ -6,4 +6,12 @@ defmodule Counter do
   def tick(pid) do
     send(pid, {:tick, self()})
   end
+
+  def state(pid) do
+    send(pid, {:state, self()})
+
+    receive do
+      {:count, value} -> value
+    end
+  end
 end
